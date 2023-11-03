@@ -448,7 +448,7 @@ address {
     padding-bottom: 100px;
 }
 
-.section-two-footer {
+.p-telegram {
     color: #FFFFFF;
     font-family: "Roboto";
     font-size: 16px;
@@ -506,31 +506,44 @@ address {
 }
 
 .input-footer {
-    background-color: #2E2F42;
+    background-color: transparent;
     width: 264px;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid  #FFF;
+    border: 1px solid  #ffffff;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    margin-right: 24px;
-    padding: 8px 12px;
+    padding-left: 16px;
+
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
 }
 
 .form-footer {
     display: flex;
     align-items: center;
+    gap: 24px;
+}
+
+.svg-telegram {
+    margin-left: 16px;
 }
 
 .button-footer {
     border-radius: 4px;
     background: #4D5AE5;
-    width: 165px;
+    min-width: 165px;
+    height: 40px;
     padding: 8px 24px;
 
     color: #FFF;
     text-align: center;
 
-    font-family: "Roboto";
+    font-family: "Roboto" sans-serif;
+    border: none;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -538,7 +551,7 @@ address {
     letter-spacing: 0.64px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center
 }
 
 /* ================== ALL MODAL ================== */
@@ -555,7 +568,7 @@ address {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms linear, visibility 250ms linear;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .back-drop.open-is {
@@ -570,12 +583,18 @@ address {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 408px;
+    min-height: 584px;
     border-radius: 4px;
     background: #FCFCFC;
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
+    padding: 0;
     position: absolute;
     width: 24px;
     height: 24px;
@@ -586,8 +605,20 @@ address {
     align-items: center;
     top: 24px;
     right: 24px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     background-color: #E7E9FC;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    background-color:#404bbf;
+    border: none;
+    fill: #ffffff;
+}
+
+.svg-close {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .p-form {
@@ -599,7 +630,6 @@ address {
     letter-spacing: 0.02em;
 
     margin-bottom: 16px;
-    margin-top: 48px;
 
     color: #2E2F42;
 }
@@ -612,7 +642,7 @@ address {
     font-weight: 400;
     line-height: 1.17;
 
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
 }
 
 .input-form {
@@ -622,6 +652,7 @@ address {
     border: 1px solid rgba(46, 47, 66, 0.40);
     outline: 4px;
     outline-color: transparent;
+    background-color: transparent;
 
     padding-left: 38px;
 
@@ -637,18 +668,19 @@ address {
 }
 
 .area-form {
-    height: 138px;
+    height: 120px;
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.40);
     resize: none;
-    padding: 12px 16px;
-    outline: none;
+    padding: 8px 16px;
+    outline: transparent;
 
-    color: rgba(46, 47, 66, 0.80);
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
 
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.17;
 
     letter-spacing: 0.04em;
 
@@ -660,6 +692,9 @@ address {
 } 
 
 .review-chek {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     width: 16px;
     height: 16px;
     margin-right: 8px;
@@ -669,16 +704,10 @@ address {
     cursor: pointer;
     fill: transparent;
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: border,fill,background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .chek-form {
-    display: flex;
-    align-items: center;
     color: #8E8F99;
 
     font-size: 12px;
@@ -715,16 +744,18 @@ address {
 
 .svgs-form {
     position: absolute;
-    top: 14px;
+    top: 50%;
     left: 16px;
     fill: #2E2F42;
+
+    transform: translateY(-50%);
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-form {
     display: block;
-    width: 169px;
+    min-width: 169px;
     padding: 16px 32px;
     margin: 0 auto;
     border-radius: 4px;
@@ -745,7 +776,7 @@ address {
 }
 
 .a-form {
-    color: #4D5AE5;
+    color: #4d5ae5;
     text-decoration: underline;
 }
 
@@ -768,5 +799,11 @@ address {
     display: flex;
     flex-direction: column;
     margin-bottom: 8px;
+}
+
+.div-form-coment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
 }
 /* ================== /ALL MODAL ================== */
